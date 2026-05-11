@@ -1,11 +1,35 @@
+// import React from 'react'
+
+// const DarkModeToggle = ( { darkMode, toggleDarkMode }) => {
+//   // TODO: Implement dark mode toggle logic
+   
+//   return (
+//     <button  onClick={toggleDarkMode}>
+//       {darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}</button>
+//   )
+// }
+
+// export default DarkModeToggle
+
+
+
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const DarkModeToggle = () => {
-  // TODO: Implement dark mode toggle logic
-
+export default function DarkModeToggle({ darkMode, toggleDarkMode }) {
   return (
-    <button>Toggle Dark Mode {/* TODO: Update this text from Dark to Light dynamically */}</button>
+    <button className="btn toggle" onClick={toggleDarkMode}>
+      {darkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
+    </button>
   )
 }
 
-export default DarkModeToggle
+DarkModeToggle.propTypes = {
+  darkMode: PropTypes.bool,
+  toggleDarkMode: PropTypes.func
+}
+
+DarkModeToggle.defaultProps = {
+  darkMode: false,
+  toggleDarkMode: () => {}
+}
