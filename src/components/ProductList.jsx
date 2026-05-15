@@ -99,11 +99,11 @@ import ProductCard from './ProductCard'
 // Sample product data (for display and tests)
 export const sampleProducts = [
   { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
-  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false }
+  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: true }
 ]
 
 const ProductList = ({ products, selectedCategory, addToCart }) => {
-  const list = products && products.length ? products : sampleProducts
+  const list = products !== undefined ? products : sampleProducts
 
   const filtered =
     selectedCategory && selectedCategory.toLowerCase() !== 'all'
@@ -117,7 +117,7 @@ const ProductList = ({ products, selectedCategory, addToCart }) => {
       <h2>Available Products</h2>
 
       {filtered.length === 0 ? (
-        <p>No products match this category.</p>
+        <p>No products available</p>
       ) : (
         filtered.map((product) => (
           <ProductCard
@@ -137,11 +137,6 @@ ProductList.propTypes = {
   addToCart: PropTypes.func
 }
 
-ProductList.defaultProps = {
-  products: sampleProducts,
-  selectedCategory: 'all',
-  addToCart: () => {}
-}
 
 export default ProductList
 

@@ -105,9 +105,4 @@ Cart.propTypes = {
   removeFromCart: PropTypes.func
 }
 
-Cart.defaultProps = {
-  items: [],
-  removeFromCart: () => {}
-}
-
 export default Cart

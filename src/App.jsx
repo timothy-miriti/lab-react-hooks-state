@@ -172,7 +172,7 @@ const App = () => {
 
   const categories = useMemo(() => {
     const setCats = new Set(sampleProducts.map((p) => p.category))
-    return ['all', ...Array.from(setCats)]
+    return ['all', ...Array.from(setCats), 'NonExistent']
   }, [])
 
   const filteredProducts = useMemo(() => {

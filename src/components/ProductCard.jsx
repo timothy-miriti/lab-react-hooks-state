@@ -125,8 +125,4 @@ ProductCard.propTypes = {
   addToCart: PropTypes.func
 }
 
-ProductCard.defaultProps = {
-  addToCart: () => {}
-}
-
 export default ProductCard

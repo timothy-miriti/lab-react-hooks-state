@@ -28,8 +28,3 @@ DarkModeToggle.propTypes = {
   darkMode: PropTypes.bool,
   toggleDarkMode: PropTypes.func
 }
-
-DarkModeToggle.defaultProps = {
-  darkMode: false,
-  toggleDarkMode: () => {}
-}
